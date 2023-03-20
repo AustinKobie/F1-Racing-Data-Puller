@@ -1,24 +1,40 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
+import { useContext } from "react";
+import { AuthContext } from "./contexts/AuthProvider";
+import Home from "./views/Home";
+import About from "./views/About";
+import WeatherSingle from "./views/WeatherSingle";
 
 function App() {
+  const { login, user, logout } = useContext(AuthContext);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      <div className="auth">
+        {user.loggedIn ? (
+          <>
+            <button className="logout-btn" onClick={logout}>Log Out</button>
+            <h2>Welcome {user.displayName}!<br/>
+            Here are your cities below:
+            </h2>
+          </>
+        ) : (
+          <>
+            <h2>
+              Welcome to the Weather App
+              <br />
+              Please Login to continue
+            </h2>
+            <button className="login-btn" onClick={login}>Login</button>
+          </>
+        )}
+      </div>
+      <Routes>
+        <Route path="/post/:uid/:id" element={<WeatherSingle />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/" element={<Home />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 

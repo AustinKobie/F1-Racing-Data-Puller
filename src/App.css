@@ -1,11 +1,82 @@
 .App {
   text-align: center;
+  
+}
+
+/* form start */
+form {
+  display: flex;
+  text-align: center;
+  width: 167px;
+  height: 50px;
+  left: 600px;
+  top: 306px;
+  position: absolute;
+
+}
+/* form end */
+
+.auth {
+  text-align: center;
 }
 
 .App-logo {
   height: 40vmin;
   pointer-events: none;
 }
+/* buttons start */
+.login-btn {
+  text-align: center;
+  background-color: #4F4CF5;
+  color: white;
+  border-radius: 10px;
+  position: absolute;
+  width: 167px;
+  height: 50px;
+  left: 636px;
+  top: 306px;
+  font-size: 20px;
+  line-height: 24px;
+  font-weight: 600;
+  font-style: normal;
+}
+
+.logout-btn {
+  border-radius: 10px;
+  width: 100px;
+  height: 30px;
+  position: absolute;
+  left: 94%;
+  color: white;
+  background-color: #4F4CF5;
+}
+
+.add-city-btn {
+  border-radius: 10px;
+  background-color: #4F4CF5;
+  color: white;
+  position: absolute;
+  width: 68px;
+  height: 25px
+  
+}
+
+
+
+/* buttons end */
+
+/* text start */
+h2 {
+  font-style: normal;
+  font-weight: 600;
+  font-size: 36px;
+  line-height: 44px;
+  width: 1440px;
+  position: absolute;
+  left: 0px;
+  top: 184px;
+}
+/* text end */
 
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
