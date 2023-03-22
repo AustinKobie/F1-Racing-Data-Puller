@@ -43,7 +43,7 @@ export const DataProvider = function (props) {
 
   async function addCity(newCity) {
     const citiesRef = collection(db, "cities");
-    const docRef = await addDoc(citiesRef, newCity);
+    const docRef = await addDoc(citiesRef, {name: newCity});
     newCity.id = docRef.id;
     setCities([...cities, newCity]);
     return newCity;

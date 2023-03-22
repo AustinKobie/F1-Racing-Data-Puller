@@ -12,6 +12,7 @@ export default function WeatherForm() {
       return;
     }
     try {
+      console.log(city)
       await addCity(city);
       setCity("");
     } catch (error) {
